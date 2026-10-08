@@ -5,3 +5,7 @@ data/
 !.env.example
 coverage/
 dist/
+
+# Public, versioned GTA-WH map snapshot (not the private task database)
+!public/city/snapshot/data/
+!public/city/snapshot/data/**

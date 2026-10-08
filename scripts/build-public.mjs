@@ -6,6 +6,7 @@ import { ensureAssets } from '../meshreceipt/server/assets.js';
 import { landmarkCatalog } from '../meshreceipt/server/landmarks.js';
 import { readPublishedEvidence } from '../meshreceipt/server/mainnet-evidence.js';
 import { RECEIPT_ABI } from '../meshreceipt/src/chain.js';
+import { verifySnapshot } from '../meshreceipt/public/city/snapshot-check.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'site');
@@ -50,6 +51,9 @@ for (const [label, source] of [['nanjing', 'GTA-NJ'], ['wuhan', 'GTA-WH']]) {
 const gatePage = path.join(output, 'api/source/nanjing/preview-gates.html');
 await writeFile(gatePage, (await readFile(gatePage, 'utf8')).replace('<a href="./index.html?lm=none">↗ 返回城市总览</a><br>', '琢信 · 城门检视<br>'));
 await writeFile(path.join(output, '.nojekyll'), '');
+const cityRoot = path.join(output, 'city/snapshot');
+const cityManifest = JSON.parse(await readFile(path.join(cityRoot, 'snapshot.json'), 'utf8'));
+const cityFiles = await verifySnapshot(cityManifest, async name => new Uint8Array(await readFile(path.join(cityRoot, name))));
 // Keep each hosting object below 8 MiB. Reassemble the exact GLB before parsing,
 // so the source geometry/materials and Meshopt data stay unchanged.
 const largeModels = {};
@@ -102,4 +106,4 @@ for (const item of landmarks) for (const url of [item.previewUrl, item.poster]) 
   if (url) await stat(path.join(output, url.split('?')[0]));
 }
 console.log(JSON.stringify({ status: 'built', assets: landmarks.length + assets.length, checkedDependencies: checked,
-  splitModels: Object.keys(largeModels).length, localReceiptVerification: evidence.localVerification.qualified, output }));
+  verifiedCityFiles: cityFiles.size, splitModels: Object.keys(largeModels).length, localReceiptVerification: evidence.localVerification.qualified, output }));
