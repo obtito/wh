@@ -27,3 +27,7 @@ npm run build
 ```
 
 输出 `site/` 为独立静态展示，既有归档不会显示成本次主网核验成功。网页不发送链上交易。模型与上游素材的说明见各项目 README 和 docs/ATTRIBUTION.md。
+
+公开网页：https://meshreceipt-wh.youngbeech1.chatgpt.site
+
+`deployment/hosting.json` 保存公开网站身份；托管用的静态源快照位于独立发布目录，应用源码不依赖托管平台。
