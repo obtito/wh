@@ -1,0 +1,11 @@
+# Every coordinated Wikidata entity inside the Wuhan core bounding box.
+# Box service takes Point(longitude latitude) — note the lon-first order.
+SELECT ?item ?itemLabel ?coord ?kindLabel WHERE {
+  SERVICE wikibase:box {
+    ?item wdt:P625 ?coord .
+    bd:serviceParam wikibase:cornerWest "Point(114.10 30.40)"^^geo:wktLiteral .
+    bd:serviceParam wikibase:cornerEast "Point(114.55 30.72)"^^geo:wktLiteral .
+  }
+  OPTIONAL { ?item wdt:P31 ?kind . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "zh,zh-hans,en". }
+}

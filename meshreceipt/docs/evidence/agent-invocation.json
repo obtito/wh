@@ -1,0 +1,81 @@
+{
+  "taskId": "b1091060-6654-49d9-92e8-31c13b012d82",
+  "agentRun": {
+    "schema": "meshreceipt.agent-run.v1",
+    "source": "responses-api",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "medium",
+    "status": "PASSED",
+    "rounds": [
+      {
+        "round": 1,
+        "status": "completed",
+        "responseReceived": true,
+        "responseId": "resp_0f53cc19ea58ede3016ac63982027087d0acf84fca305fdaf8",
+        "calls": [
+          {
+            "callId": "call_PMxYX3HPZIP2UTv7oH1wHe2R",
+            "tool": "query_records",
+            "status": "EXECUTED"
+          }
+        ],
+        "usage": {
+          "input_tokens": 380,
+          "output_tokens": 14,
+          "total_tokens": 394
+        }
+      },
+      {
+        "round": 2,
+        "status": "completed",
+        "responseReceived": true,
+        "responseId": "resp_0f53cc19ea58ede3016ac6398437f087d0a8e703a6a6c1563d",
+        "calls": [
+          {
+            "callId": "call_ChHfTlTT4rBMT9R0S0OiFpGB",
+            "tool": "run_service",
+            "status": "EXECUTED",
+            "providerId": "service-a",
+            "verdict": "FAIL"
+          }
+        ],
+        "usage": {
+          "input_tokens": 544,
+          "output_tokens": 38,
+          "total_tokens": 582
+        }
+      },
+      {
+        "round": 3,
+        "status": "completed",
+        "responseReceived": true,
+        "responseId": "resp_0f53cc19ea58ede3016ac63987a6b887d0a4f433e0aff981ff",
+        "calls": [
+          {
+            "callId": "call_01cbc4107256445aa18c1bb7cc20cafe",
+            "tool": "run_service",
+            "status": "EXECUTED",
+            "providerId": "service-b",
+            "verdict": "PASS"
+          }
+        ],
+        "usage": {
+          "input_tokens": 644,
+          "output_tokens": 33,
+          "total_tokens": 677
+        }
+      }
+    ]
+  },
+  "inputHash": "966eceec3db585ba502d3b92b9ff66f66a9b09c93db760edd487e16fad897b7a",
+  "policyHash": "81043db65b59cf043370e3dc8ea1601b5f92207e9f0a3b9095eb080aa4d6e003",
+  "outputHash": "c9d6d706a6fbab5c634dbe1cdbaf8dc50c5370b35810f46ca39e94fd018e7f23",
+  "reportHash": "fdfade8ba89138028aa6ede68201c87d514b93ab91bf384543206cbb2156b91f",
+  "usage": {
+    "input": 1568,
+    "output": 85,
+    "total": 1653
+  },
+  "endpoint": "https://sub.fancybag.cn",
+  "note": "Requested model/effort and gateway-reported usage; not independent verification of underlying model, price or retention. No API key or private reasoning included."
+}

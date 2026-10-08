@@ -1,0 +1,118 @@
+{
+  "schema": "meshreceipt.city-base.v1",
+  "baseVersion": "de7c9bde54712beae2280b73487b07d8bc59248e4e2e6c37aa2321b7b8f04a32",
+  "capturedAt": "2026-10-08T01:28:25.114Z",
+  "files": {
+    "ATTRIBUTION.md": {
+      "bytes": 4893,
+      "sha256": "5ba20054cd5ae4a78ce25fdb3bc023a9f1b411c6549e5cb97f95f97b4356da81"
+    },
+    "data/osm/roads-land.json": {
+      "bytes": 977432,
+      "sha256": "c3dc8b890ada817b83e4d2737da2f1534500a774aa644758040dd6ef8ff8f54e"
+    },
+    "data/osm/roads.json": {
+      "bytes": 881324,
+      "sha256": "d6e49d07b9d1ced3d6bf13fc6a7121d84d3a500f3a43a54a4d61be7e60b8c393"
+    },
+    "data/wikidata-coords.json": {
+      "bytes": 198234,
+      "sha256": "42f61b31032d96f6217a585cb848d0a1be302569e5da879d2a7390ee0d08c1e7"
+    },
+    "docs/ATTRIBUTION.md": {
+      "bytes": 4893,
+      "sha256": "5ba20054cd5ae4a78ce25fdb3bc023a9f1b411c6549e5cb97f95f97b4356da81"
+    },
+    "js/data.js": {
+      "bytes": 29512,
+      "sha256": "ffe271213951ee66b2e54593a0d24d3de366a63d3e0fbb8b025fbc64ce8c516b"
+    },
+    "js/geo.js": {
+      "bytes": 9544,
+      "sha256": "846a9dcc47b29d0e2739f2ed4886e770e81647d0cca14ae15f7d9b737bc9fc8b"
+    },
+    "js/lib.js": {
+      "bytes": 20199,
+      "sha256": "bc02af5571ef7d56147f2498aab9457408e27b528a4b19064c5c6e809b663723"
+    },
+    "js/road-layout.js": {
+      "bytes": 9944,
+      "sha256": "2b14fbdde8ad855b57e07631fe43d88746e26a06d4e2b0ea40f076f26f990794"
+    },
+    "js/water-mask.js": {
+      "bytes": 3554,
+      "sha256": "cd6d038d17664559af0c8eaf59c7fc6194de3670448043e2d7009aa36a13f2b8"
+    },
+    "js/whu-layout.js": {
+      "bytes": 1918,
+      "sha256": "d0fa23e008c044f4c8ccc2d27318b22d3f6c05240e906de0f472d11494d25f74"
+    },
+    "js/world.js": {
+      "bytes": 13534,
+      "sha256": "0cd3416bc8c8a6b833bdc5176f76e537cfa3bfc0f53cbd5e31f6efd6a5ff2c4e"
+    },
+    "README.md": {
+      "bytes": 6798,
+      "sha256": "be3b1577f24837d52996110ed6a8b537931b6700700243609ec6ba8bbbad8675"
+    },
+    "vendor/OrbitControls.js": {
+      "bytes": 40484,
+      "sha256": "09673b997864b8091943d2673637c0f31f7cf67daeddd0902fce9bf098a8d093"
+    },
+    "vendor/THREE-LICENSE.md": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "vendor/three.core.js": {
+      "bytes": 1421746,
+      "sha256": "6a7fc83437818534d5e30ce8c8e0ce76230ca2245446ea24744bb3d88c436583"
+    },
+    "vendor/three.module.js": {
+      "bytes": 639046,
+      "sha256": "e8ac51bc2f6b7eb17bc88c6540eb0a1fee872f848949373de39d55f34b5c5a8f"
+    }
+  },
+  "source": {
+    "kind": "local-worktree",
+    "directory": "/Users/Admin/Desktop/gta-wh",
+    "repository": "obtito/GTA-WH",
+    "commit": "b6598233c26ec002d70ea808d838ec2682285d74",
+    "dirty": true,
+    "note": "Selected files include local uncommitted changes; source files were not modified."
+  },
+  "rendering": {
+    "threeVersion": "0.183.2",
+    "metersPerUnit": 1,
+    "eastAxis": "+X",
+    "northAxis": "-Z",
+    "terrain": "procedural reference, not satellite-derived elevation",
+    "coordinates": "GTA-WH scene reference; selected points require review"
+  },
+  "counts": {
+    "originalRoadRecords": 2823,
+    "sceneRoadRecords": 2972,
+    "sourceEntities": 329,
+    "sourceFeaturedEntities": 42
+  },
+  "roadAdjustments": {
+    "inputRoads": 2823,
+    "reroutedRoads": 142,
+    "disconnectedSpans": 157,
+    "outputRoads": 2972,
+    "bridgeLandings": 10
+  },
+  "boundaries": {
+    "buildingsIncluded": false,
+    "modelAssetsIncluded": false,
+    "satellitePrecisionClaimed": false,
+    "communitySubmissionEnabled": false,
+    "onChainContributions": false,
+    "publicReleaseAuthorized": false
+  },
+  "attribution": {
+    "OSM": "© OpenStreetMap contributors · ODbL 1.0; preserve data attribution and applicable obligations",
+    "sourceNotice": "./ATTRIBUTION.md",
+    "threeLicense": "./vendor/THREE-LICENSE.md",
+    "applicationCode": "Project and upstream code distribution terms require separate confirmation; local prototype only."
+  }
+}

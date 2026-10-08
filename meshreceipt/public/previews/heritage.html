@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>南京历史组群 · 原模型检视</title>
+  <script type="importmap">{"imports":{"three":"/api/source/nanjing/vendor/three.module.js","three/addons/":"/api/source/nanjing/vendor/"}}</script>
+  <style>
+    *{box-sizing:border-box}body{margin:0;color:#314b3e;background:#e4e7dc;font:13px "Songti SC","Microsoft YaHei",sans-serif}#viewport{position:absolute;inset:0 0 0 205px}canvas{display:block;width:100%;height:100%}aside{position:absolute;inset:0 auto 0 0;width:205px;padding:22px 15px;background:#f8f7f0;display:flex;flex-direction:column;border-right:1px solid #cdd3c4}.eyebrow{font:9px monospace;letter-spacing:2px;color:#9d8959}h1{font-size:22px;font-weight:500;line-height:1.5;margin:14px 0}p{font-size:11px;line-height:1.8;color:#7e8974;margin:0 0 15px}nav{overflow:auto;flex:1;min-height:0}button{font:inherit;cursor:pointer;border:0;color:inherit}nav button{display:block;text-align:left;width:100%;padding:11px 8px;border-bottom:1px solid #e0e3d7;background:transparent;font-size:12px}button[aria-pressed=true]{background:#385646;color:#fff;border-radius:3px}button:focus-visible{outline:2px solid #b39761;outline-offset:-2px}#view-name{position:absolute;top:20px;left:226px;font-size:19px;color:#526748;pointer-events:none}#controls{flex-wrap:wrap;max-width:calc(100% - 238px);position:absolute;left:226px;bottom:19px;display:flex;gap:7px;padding:7px;background:#f8f7f0db;border-radius:4px}#controls button{background:#f8f7f0;border:1px solid #c7cfc0;padding:8px 13px;border-radius:3px}#status{position:absolute;right:17px;bottom:23px;font-size:10px;max-width:200px;text-align:right;color:#7f8b71}#error{color:#a65d46;font-size:11px;line-height:1.8}a{font-size:10px;color:#708568}footer{margin-top:12px;font-size:9px;line-height:1.7;color:#909982}
+    #controls button[aria-pressed=true]{background:#385646;color:#fff}
+    @media(max-width:620px){aside{width:126px;padding:15px 8px}#viewport{left:126px}.eyebrow{font-size:8px;letter-spacing:1px}h1{font-size:18px}p{font-size:10px}nav button{font-size:11px;padding:12px 6px}#view-name,#controls{left:138px}#view-name{font-size:15px;top:16px}#controls{max-width:calc(100% - 150px);bottom:45px;gap:4px;padding:5px}#controls button{font-size:10px;padding:7px}#status{font-size:9px;bottom:13px;left:140px;right:12px;max-width:none}}
+  </style>
+</head>
+<body>
+  <div id="viewport" aria-label="原项目程序化组群三维模型"></div>
+  <aside><span class="eyebrow">NANJING / HERITAGE</span><h1 id="title">正在读取组群</h1><p id="summary"></p><nav id="parts" aria-label="序列视角定位"></nav><div id="error" role="alert"></div><footer>原代码：GTA-NJ<br>新增：琢信检视界面<br><a href="/api/source/nanjing/docs/ATTRIBUTION.md" target="_blank" rel="noopener">原项目素材署名 ↗</a></footer></aside>
+  <div id="view-name">正在构建模型…</div>
+  <div id="controls" aria-label="组群观察角度"><button id="cover" aria-pressed="true">封面视角</button><button id="overview">全序列</button><button id="top">俯视</button><button id="rotate" aria-pressed="false">环绕</button></div>
+  <div id="status" role="status">尚未验收</div>
+  <script type="module">
+    document.querySelectorAll('#controls button').forEach(button => { button.disabled = true; });
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    import('./heritage.js').catch(error => {
+      if (window.parent !== window) window.parent.postMessage({ type: 'meshreceipt-preview-status', status: 'error', message: error.message }, location.origin);
+      document.getElementById('error').textContent = `预览依赖加载失败：${error.message}`;
+      document.getElementById('view-name').textContent = '预览未能加载';
+      document.getElementById('status').textContent = '不能将加载失败计为验收通过';
+    });
+  </script>
+</body>
+</html>

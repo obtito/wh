@@ -1,0 +1,9 @@
+{
+  "name": "wh-meshreceipt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-public.mjs",
+    "start": "npm --prefix meshreceipt start"
+  }
+}

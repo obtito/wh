@@ -1,0 +1,272 @@
+{
+  "environment": "Codex in-app browser on this Mac, 1280 × 720 viewport; frame intervals are browser wall-time, not GPU queries. Measurements taken without screenshots.",
+  "date": "2026-10-08",
+  "results": {
+    "zifeng": {
+      "frames": 95,
+      "durationMs": 1563,
+      "p50Ms": 16.6,
+      "p95Ms": 17.6,
+      "maxMs": 18.8,
+      "longFrames": 0,
+      "viewportWidth": 1198,
+      "viewportHeight": 476,
+      "rendererPixelRatio": 2,
+      "effectPixelRatio": 1,
+      "effectWidth": 1198,
+      "effectHeight": 476,
+      "sceneWidth": 1198,
+      "sceneHeight": 476,
+      "renderCpuP95Ms": 0.7,
+      "renderCpuMaxMs": 0.9,
+      "drawCalls": 14,
+      "fragments": 5184,
+      "warmupMs": 35.6,
+      "textureWidth": 1280,
+      "textureHeight": 902,
+      "restoreCpuMs": 0.3,
+      "restoredPixelRatio": 2,
+      "resourcesBefore": {
+        "geometries": 11,
+        "textures": 2
+      },
+      "resourcesAfter": {
+        "geometries": 11,
+        "textures": 2
+      }
+    },
+    "huanghe": {
+      "frames": 95,
+      "durationMs": 1556,
+      "p50Ms": 16.6,
+      "p95Ms": 17.9,
+      "maxMs": 18.2,
+      "longFrames": 0,
+      "viewportWidth": 836,
+      "viewportHeight": 486,
+      "rendererPixelRatio": 1.5,
+      "effectPixelRatio": 1,
+      "effectWidth": 836,
+      "effectHeight": 486,
+      "sceneWidth": 836,
+      "sceneHeight": 486,
+      "renderCpuP95Ms": 1.6,
+      "renderCpuMaxMs": 1.8,
+      "drawCalls": 65,
+      "fragments": 4116,
+      "warmupMs": 1043.2,
+      "textureWidth": 1280,
+      "textureHeight": 901,
+      "restoreCpuMs": 0.4,
+      "restoredPixelRatio": 1.5,
+      "resourcesBefore": {
+        "geometries": 24,
+        "textures": 15
+      },
+      "resourcesAfter": {
+        "geometries": 24,
+        "textures": 15
+      }
+    },
+    "wuhan": {
+      "frames": 95,
+      "durationMs": 1560,
+      "p50Ms": 16.7,
+      "p95Ms": 17.3,
+      "maxMs": 17.8,
+      "longFrames": 0,
+      "viewportWidth": 836,
+      "viewportHeight": 486,
+      "rendererPixelRatio": 1.5,
+      "effectPixelRatio": 1,
+      "effectWidth": 836,
+      "effectHeight": 486,
+      "sceneWidth": 836,
+      "sceneHeight": 486,
+      "renderCpuP95Ms": 2.8,
+      "renderCpuMaxMs": 3.2,
+      "drawCalls": 325,
+      "fragments": 4116,
+      "warmupMs": 623.2,
+      "textureWidth": 1280,
+      "textureHeight": 903,
+      "restoreCpuMs": 0.4,
+      "restoredPixelRatio": 1.5,
+      "resourcesBefore": {
+        "geometries": 127,
+        "textures": 56
+      },
+      "resourcesAfter": {
+        "geometries": 127,
+        "textures": 56
+      }
+    },
+    "gates": {
+      "frames": 94,
+      "durationMs": 1551,
+      "p50Ms": 16.6,
+      "p95Ms": 18.1,
+      "maxMs": 18.7,
+      "longFrames": 0,
+      "viewportWidth": 742,
+      "viewportHeight": 486,
+      "rendererPixelRatio": 2,
+      "effectPixelRatio": 1,
+      "effectWidth": 742,
+      "effectHeight": 486,
+      "sceneWidth": 742,
+      "sceneHeight": 486,
+      "renderCpuP95Ms": 0.9,
+      "renderCpuMaxMs": 1,
+      "drawCalls": 21,
+      "fragments": 3626,
+      "warmupMs": 11.7,
+      "textureWidth": 1280,
+      "textureHeight": 853,
+      "restoreCpuMs": 0.5,
+      "restoredPixelRatio": 2,
+      "resourcesBefore": {
+        "geometries": 18,
+        "textures": 5
+      },
+      "resourcesAfter": {
+        "geometries": 18,
+        "textures": 5
+      }
+    },
+    "heritage": {
+      "frames": 94,
+      "durationMs": 1550,
+      "p50Ms": 16.7,
+      "p95Ms": 18.1,
+      "maxMs": 18.8,
+      "longFrames": 0,
+      "viewportWidth": 831,
+      "viewportHeight": 486,
+      "rendererPixelRatio": 1.5,
+      "effectPixelRatio": 1,
+      "effectWidth": 831,
+      "effectHeight": 486,
+      "sceneWidth": 831,
+      "sceneHeight": 486,
+      "renderCpuP95Ms": 0.9,
+      "renderCpuMaxMs": 1.2,
+      "drawCalls": 19,
+      "fragments": 4067,
+      "warmupMs": 14.5,
+      "textureWidth": 1280,
+      "textureHeight": 853,
+      "restoreCpuMs": 0.4,
+      "restoredPixelRatio": 1.5,
+      "resourcesBefore": {
+        "geometries": 16,
+        "textures": 0
+      },
+      "resourcesAfter": {
+        "geometries": 16,
+        "textures": 0
+      }
+    },
+    "replays": [
+      {
+        "frames": 95,
+        "durationMs": 1567,
+        "p50Ms": 16.7,
+        "p95Ms": 16.8,
+        "maxMs": 17.9,
+        "longFrames": 0,
+        "viewportWidth": 831,
+        "viewportHeight": 486,
+        "rendererPixelRatio": 1.5,
+        "effectPixelRatio": 1,
+        "effectWidth": 831,
+        "effectHeight": 486,
+        "sceneWidth": 831,
+        "sceneHeight": 486,
+        "renderCpuP95Ms": 0.4,
+        "renderCpuMaxMs": 0.5,
+        "drawCalls": 19,
+        "fragments": 4067,
+        "warmupMs": 10.2,
+        "textureWidth": 1280,
+        "textureHeight": 853,
+        "restoreCpuMs": 0.2,
+        "restoredPixelRatio": 1.5,
+        "resourcesBefore": {
+          "geometries": 16,
+          "textures": 0
+        },
+        "resourcesAfter": {
+          "geometries": 16,
+          "textures": 0
+        }
+      },
+      {
+        "frames": 94,
+        "durationMs": 1550,
+        "p50Ms": 16.7,
+        "p95Ms": 17,
+        "maxMs": 17.7,
+        "longFrames": 0,
+        "viewportWidth": 831,
+        "viewportHeight": 486,
+        "rendererPixelRatio": 1.5,
+        "effectPixelRatio": 1,
+        "effectWidth": 831,
+        "effectHeight": 486,
+        "sceneWidth": 831,
+        "sceneHeight": 486,
+        "renderCpuP95Ms": 0.4,
+        "renderCpuMaxMs": 0.6,
+        "drawCalls": 19,
+        "fragments": 4067,
+        "warmupMs": 5,
+        "textureWidth": 1280,
+        "textureHeight": 853,
+        "restoreCpuMs": 0.2,
+        "restoredPixelRatio": 1.5,
+        "resourcesBefore": {
+          "geometries": 16,
+          "textures": 0
+        },
+        "resourcesAfter": {
+          "geometries": 16,
+          "textures": 0
+        }
+      },
+      {
+        "frames": 94,
+        "durationMs": 1550,
+        "p50Ms": 16.7,
+        "p95Ms": 16.9,
+        "maxMs": 17.7,
+        "longFrames": 0,
+        "viewportWidth": 831,
+        "viewportHeight": 486,
+        "rendererPixelRatio": 1.5,
+        "effectPixelRatio": 1,
+        "effectWidth": 831,
+        "effectHeight": 486,
+        "sceneWidth": 831,
+        "sceneHeight": 486,
+        "renderCpuP95Ms": 0.5,
+        "renderCpuMaxMs": 0.6,
+        "drawCalls": 19,
+        "fragments": 4067,
+        "warmupMs": 4.1,
+        "textureWidth": 1280,
+        "textureHeight": 853,
+        "restoreCpuMs": 0.1,
+        "restoredPixelRatio": 1.5,
+        "resourcesBefore": {
+          "geometries": 16,
+          "textures": 0
+        },
+        "resourcesAfter": {
+          "geometries": 16,
+          "textures": 0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>江城共琢 · 琢信城市共建</title>
+  <meta name="description" content="城市参考底图与待建点位。地图展示不代表测绘级精度；社区提交和链上登记尚未开放。">
+  <script type="importmap">{"imports":{"three":"./snapshot/vendor/three.module.js","three/addons/":"./snapshot/vendor/"}}</script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="city-header"><a href="/" class="brand">琢信<span>MESHRECEIPT / CITY</span></a><span class="phase">01 · 底图与点位</span><a class="back" href="/">返回资产与验收 ↗</a></header>
+  <main class="city-layout">
+    <aside class="sidebar">
+      <span class="eyebrow">AN OPEN CITY, IN THE MAKING</span>
+      <h1>江城共琢<span>从一处，成一城。</span></h1>
+      <p class="intro">道路与水系勾勒骨架。<br>建筑暂留白，等待共同雕琢。</p>
+      <div class="counts"><div><strong id="point-count">—</strong><span>待建点位</span></div><div><strong>0</strong><span>社区采纳版本</span></div></div>
+      <label class="search">寻找一处点位<input id="search" type="search" placeholder="黄鹤楼、江汉关…" autocomplete="off" disabled></label>
+      <nav id="point-list" aria-label="首批共建点位"></nav>
+      <p id="no-points" hidden>没有匹配的点位。</p>
+      <div class="scope-note"><strong>留白，不等于无人所有。</strong><p>点位只用于组织数字模型贡献，不赋予现实建筑、土地或版权权益。</p></div>
+    </aside>
+    <section class="map-panel" aria-label="武汉城市参考地图">
+      <div id="viewport" aria-busy="true"><div id="labels" aria-label="地图点位"></div></div>
+      <div class="map-title"><span>WUHAN · 两江三镇</span><small>参考底图 · 非测绘级复原</small></div>
+      <div class="map-tools" aria-label="地图工具">
+        <button id="overview" disabled>城市总览</button><button id="top" disabled aria-pressed="false">俯视</button>
+        <label>道路<select id="road-mode" disabled><option value="scene">场景路网（经调整）</option><option value="original">原始 OSM 路网参考</option></select></label>
+        <label><input id="terrain-toggle" type="checkbox" checked disabled>山体</label>
+        <label><input id="roads-toggle" type="checkbox" checked disabled>道路</label>
+      </div>
+      <div id="loading" role="status">正在读取底图快照…</div>
+      <div id="error" role="alert" hidden></div>
+      <button id="retry" class="retry" hidden>重新读取地图</button>
+      <div class="legend"><span><i class="water-key"></i>水系</span><span><i class="road-key"></i>道路</span><span><i class="point-key"></i>待建点位</span><small>拖动旋转 · 右键平移 · 滚轮缩放</small></div>
+      <div class="attribution"><span>底座：GTA-WH · 地图数据 © OpenStreetMap contributors</span><a href="./snapshot/ATTRIBUTION.md" target="_blank" rel="noopener">来源与许可 ↗</a><button id="sources" disabled>快照信息</button></div>
+    </section>
+    <aside class="detail" aria-label="点位详情">
+      <span class="eyebrow">A PLACE TO CONTRIBUTE</span><span class="point-state">待建模 · 位置待核对</span>
+      <h2 id="point-name">选择一处点位</h2><p id="point-description">点击地图或左侧目录，查看点位与建模需求。</p>
+      <dl id="point-details"></dl>
+      <div class="requirements"><strong>建议交付约定</strong><p>GLB · 米制 · Y 轴向上<br>底部中心为原点 · 注明素材与许可</p><small>占地、朝向、预算及验收规则尚待确定。</small></div>
+      <button id="download" class="primary" disabled>下载点位需求草案 ↓</button>
+      <button class="pending" disabled>社区提交 · 尚未开放</button>
+      <p class="detail-note">尚无社区候选、采纳或链上贡献记录。现有地标模型未作为社区贡献自动导入。</p>
+      <p id="status" role="status" aria-live="polite">地图尚未就绪。</p>
+    </aside>
+  </main>
+  <dialog id="source-dialog"><button id="close-sources" aria-label="关闭快照信息">×</button><h2>这张底图从哪里来？</h2><p>冻结指定源目录的文件内容；未修改源项目。场景路网经过游戏化调整，原始路网也不代表实测精度。</p><pre id="source-info"></pre><p>文件指纹只绑定版本，不证明位置准确或授权充分。</p></dialog>
+  <script type="module">
+    import('./main.js').catch(error => {
+      document.getElementById('loading').hidden = true;
+      const notice = document.getElementById('error'); notice.hidden = false;
+      notice.textContent = `地图未能加载：${error.message}。请检查底图快照和浏览器 WebGL 支持。`;
+      document.getElementById('viewport').setAttribute('aria-busy', 'false');
+      const retry = document.getElementById('retry'); retry.hidden = false; retry.onclick = () => location.reload();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Generation mode: built-in image_gen (composition edit)
+Input: public/previews/nanjing-wall-poster-cinematic.png
+Output: public/previews/nanjing-wall-poster-cinematic-v2.png
+Web derivative: public/previews/nanjing-wall-poster-cinematic-v2.webp (WebP quality 85)
+
+Use case: compositing
+Asset type: landscape 3:2 cinematic Nanjing City Wall website cover.
+Input image: edit target and reference for the existing premium cinematic texture, grey-brick material, golden storm light and solemn imperial grandeur.
+Primary request: Optimize the composition of this poster. Rebuild the spatial layout with stronger visual hierarchy and more believable fortifications, retaining the same subject, atmosphere, materials and film-poster quality.
+Composition changes: One clearly dominant massive Ming-style Nanjing gate and its gatehouse anchor the central composition, viewed from a slightly oblique low perspective so both the front and the long adjoining wall have weight. Make this dominant gate a little broader and lower, with the heavy imposing character of a real Nanjing brick fortification. Two smaller, distinct secondary gates retreat into the middle distance to either side at unequal scales, joined by continuous ramparts. They are supporting silhouettes, not a row of equally important buildings. Reduce visual clutter and give the main gatehouse a clean silhouette against the sky.
+Remove ALL the recursive nested gates visible inside the foreground arch; its opening should reveal only a naturally shadowed passage into a softly lit enclosed courtyard, with no further miniature gate framed inside. Remove the exaggerated deep stepped foreground trench. Replace with a spacious gently rising stone approach and one strong diagonal parapet leading toward the hero gate. Keep the lower foreground simpler and slightly darker to guide the eye upward. Use the walls' sweeping lines and mist-separated planes to create epic depth instead of duplicating arches.
+Lighting: Let a focused warm sunbeam catch the main gate's upper masonry and roof edge, balanced by subdued secondary gates; soften the very brightest patch of sky so it does not steal the focus. Keep weathered tactile stone, refined film grain, charcoal clouds and atmospheric gold light. Coherent architectural perspective, sensible scales, believable grounded structures.
+Constraints: No text, titles, logos, people, watermarks or modern buildings. No repeated gate-within-gate tunnel, no fantasy castle, no split panels. Main architecture within safe central crop area for a website card. Full bleed opaque artwork.

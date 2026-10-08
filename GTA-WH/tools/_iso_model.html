@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#80a8d8}canvas{display:block}</style>
+</head>
+<body>
+<script type="importmap">
+{ "imports": { "three": "../vendor/three.module.js", "three/addons/": "../vendor/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/GLTFLoader.js';
+const q = new URLSearchParams(location.search);
+const file = q.get('m') || 'trafficlight_A';
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(40, innerWidth / innerHeight, 0.1, 200);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x667744, 2.2));
+const d = new THREE.DirectionalLight(0xffffff, 2.0);
+d.position.set(3, 6, 4);
+scene.add(d);
+new GLTFLoader().load(`../assets/props/${file}.gltf`, (g) => {
+  scene.add(g.scene);
+  const box = new THREE.Box3().setFromObject(g.scene);
+  const c = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3());
+  const h = Math.max(size.x, size.y, size.z) || 2;
+  cam.position.set(c.x + h * 0.9, c.y + h * 0.45, c.z + h * 0.9);
+  cam.lookAt(c.x, c.y - h * 0.1, c.z);
+  window.__ready = 1;
+});
+(function tick() { renderer.render(scene, cam); requestAnimationFrame(tick); })();
+</script>
+</body>
+</html>

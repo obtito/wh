@@ -1,0 +1,16 @@
+{
+  "name": "黄鹤楼 · GLB 最新展示修订",
+  "source": "GTA-WH 本地展示修订快照",
+  "snapshotDate": "2026-10-07",
+  "assetPath": "assets/models/huanghe-tower/huanghe-main-tower-lod2.glb",
+  "assetSha256": "369bb9d4fa200612f06a0c27ce0cdd0935a071738787ffcb29e1c8d3ffbbeda3",
+  "assetAuthor": "China_Tower / 0G-Bhqc",
+  "license": "原仓库标注 MIT；仍须核对上游许可。此标注不适用于独立 Three.js 代码模型。",
+  "presentationSource": "GTA-WH/js/main.js:392-487",
+  "presentationSourceSha256": "26b60eb55f52b92849838591dc28c802fedca8b77f51e233f7c047c9e0cdd7d7",
+  "sourceState": "本地版本；不声称当前修订已发布至 GitHub",
+  "presentation": "gta-wh-20261007",
+  "changes": ["Material #25 屋顶色 #a87330、非金属、粗糙度 0.78", "后缀 -008 朱柱色 #a74432、粗糙度 0.75", "叠加双球葫芦宝顶", "叠加黄鹤楼 Canvas 匾额"],
+  "adaptation": "楼体等比展示高度 51.4 m；保留原网格。展示园景不用 GTA-WH 的地理偏移和下沉 2 m，不加入夜间亮化。补件在归一化后叠加，不再整体缩放。",
+  "limitations": ["这是同一 GLB 的展示修订，不是新导出的优化网格", "展示园景为设计场景，不是实地测绘复原", "未完成模型质量验收；未发行数字资产"]
+}

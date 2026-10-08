@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>琢信 · BOT Chain 测试网部署</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f4f5ef;color:#29453b;font:15px/1.7 system-ui,sans-serif}main{max-width:840px;margin:48px auto;padding:32px;background:#fffef8;border:1px solid #d7ddce;border-radius:16px}h1{font-size:28px;margin:0 0 12px}p{color:#657266}label{display:block;margin:20px 0 6px}input,textarea{width:100%;padding:12px;font:13px/1.6 monospace;color:inherit;background:#f7f8f2;border:1px solid #ccd5c5;border-radius:6px}textarea{min-height:120px}button{padding:12px 18px;margin:14px 8px 8px 0;background:#2e5142;color:white;border:0;border-radius:7px;font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:default}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f4ec;padding:16px;border-radius:8px;font:13px/1.7 monospace}#status{min-height:26px}a{color:#2e6655}@media(max-width:650px){main{margin:16px;padding:20px}}
+  </style>
+</head>
+<body><main>
+  <h1>BOT Chain 测试网部署</h1>
+  <p>部署 MeshReceiptRegistry。合约记录验收声明和文件指纹；验收者地址在部署后固定。</p>
+  <p>目标网络：BOT Chain / Bohr Testnet · Chain ID 968 · 转账金额 0 BOT。Gas 使用测试 BOT。请在装有 OKX / MetaMask 的浏览器打开本页。</p>
+  <p>RPC：https://rpc.bohr.life · <a href="https://dev-docs.botchain.ai/docs/Developers/quick-guide/" target="_blank" rel="noopener">官方参数</a> · <a href="https://faucet.botchain.ai" target="_blank" rel="noopener">领取测试 BOT</a></p>
+  <button id="network">添加 / 切换 BOT 测试网</button>
+  <label for="attester">验收者钱包公开地址</label><input id="attester" autocomplete="off" spellcheck="false" placeholder="0x…">
+  <button id="connect">1. 连接钱包并检查</button><button id="prepare" disabled>2. 预估部署费用</button>
+  <pre id="review">等待连接钱包。不会请求私钥或助记词。</pre>
+  <button id="deploy" disabled>3. 打开钱包确认部署</button>
+  <p id="status" role="status" aria-live="polite"></p>
+  <section id="result" hidden>
+    <h2>部署证据</h2><pre id="evidence"></pre><a id="explorer" target="_blank" rel="noopener">查看 BOT 测试网交易</a>
+    <button id="download">保存部署证据 JSON</button>
+    <label for="config">部署核对成功后的应用配置</label><textarea id="config" readonly></textarea>
+  </section>
+  <details><summary>编译信息与恢复部署查询</summary><pre id="compiler"></pre>
+    <label for="txHash">已发送的部署交易哈希</label><input id="txHash" spellcheck="false" placeholder="0x…">
+    <button id="verify">查询并核对部署</button>
+  </details>
+  <p><a href="/">返回琢信</a> · 完成测试网部署后，仍需按赛事要求准备主网证据。</p>
+</main><script type="module" src="./testnet-deploy.js"></script></body>
+</html>

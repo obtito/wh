@@ -1,0 +1,12 @@
+Generation mode: built-in image_gen
+Output: public/previews/nanjing-wall-poster-cinematic.png
+Web derivative: public/previews/nanjing-wall-poster-cinematic.webp (WebP quality 85)
+
+Use case: stylized-concept
+Asset type: cinematic cover artwork for the Nanjing City Wall landmark card on a Chinese architectural heritage website, landscape 3:2 composition.
+Primary request: 为南京城墙制作电影海报质感的封面，展现帝王气势，可以组合多个城门。建筑本身带来恢宏庄严的力量。
+Subject and scene: An epic cinematic architectural montage of Nanjing's monumental Ming city walls and multiple city gates. Dominant foreground: the massive weathered grey-brick ramparts and deep arched gateway of Zhonghua Gate, with layered fortified barbicans creating an immense procession into the distance. Secondary silhouettes evoke Nanjing's ceremonial multi-arched gates and a traditional Chinese gatehouse, unified into one convincing monumental composition. This is an artistic composite of multiple gates, not a literal single-location reconstruction.
+Composition/framing: Low oblique wide-angle vantage, powerful converging stone approaches leading toward the central gate, huge crenellated walls across the lower two-thirds, receding gates and battlements form layered scale. Strong central silhouette remains readable as a small website card. Keep all important architecture within the center 85% for gentle card cropping. The city walls, masonry and gateways are the heroes, no people or emperor portrait.
+Style/medium: Premium historical epic cinema poster key art, photoreal architectural detail with refined matte-painting composition, restrained film grain, realistic stone and bricks, tactile ancient masonry. Sophisticated, monumental, solemn and imperial.
+Lighting/mood: Dramatic late-afternoon golden shafts break through towering charcoal storm clouds, raking warm light across crenellations and arched vaults, atmospheric mist between successive ramparts, rich shadows retaining masonry detail. Muted stone grey and charcoal, burnished gold highlights. Premium cinematic contrast, not oversaturated.
+Constraints: No typography, captions, signage, credits, logos or watermarks. No collage borders or split panels. No modern skyline, neon, science fiction, European castles, fantasy spires, floating architecture or excessive golden ornament. Preserve coherent structural geometry and plausible Nanjing grey-brick fortified architecture. Opaque full-bleed artwork.

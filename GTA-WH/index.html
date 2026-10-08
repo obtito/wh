@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>武汉 · 江城 ｜ GTA-WH</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.module.js",
+      "three/addons/": "./vendor/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+
+    <!-- 加载 -->
+    <div id="loading">
+      <div class="load-box">
+        <div class="load-title">武 汉</div>
+        <div class="load-sub">WUHAN · 江城 · 开放世界原型</div>
+        <div class="load-bar"><i id="loadBar"></i></div>
+        <div id="loadText" class="load-text">正在生成城市……</div>
+      </div>
+    </div>
+
+    <!-- 顶部 -->
+    <header id="topbar" class="panel">
+      <div class="brand">
+        <span class="brand-mark">汉</span>
+        <div class="brand-txt">
+          <h1>武汉 · 江城</h1>
+          <p id="brandSub">两江三镇 · 程序化城市 · 地标精建</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div id="clockWrap" title="拖动调整时间(或按 N 切换昼夜)">
+          <span id="clockVal">15:00</span>
+          <input id="timeSlider" type="range" min="0" max="24" step="0.1" value="15" />
+        </div>
+        <button class="btn ghost" id="btnHelp" title="帮助 (H)">操作说明</button>
+        <button class="btn ghost" id="btnList" title="地标索引 (L)">地标</button>
+      </div>
+    </header>
+
+    <!-- 任务条 -->
+    <div id="tourBar" class="panel hidden">
+      <div class="tour-head">
+        <span id="tourName">武汉三镇观光线</span>
+        <span id="tourStep" class="chip">1/10</span>
+      </div>
+      <div id="tourBrief"></div>
+      <div class="tour-bar"><i id="tourBarFill"></i></div>
+    </div>
+
+    <!-- 右侧地标列表 -->
+    <aside id="listPanel" class="panel hidden">
+      <div class="panel-head">
+        <span>地标索引</span>
+        <span id="listCount" class="chip-count">0</span>
+      </div>
+      <div id="listBody" class="list-body"></div>
+      <div class="panel-foot">
+        <button class="btn ghost small" id="btnTourFly">观光任务</button>
+      </div>
+    </aside>
+
+    <!-- POI 卡片 -->
+    <div id="poiCard" class="panel hidden">
+      <div class="poi-head">
+        <span id="poiCat" class="chip"></span>
+        <h2 id="poiName">黄鹤楼</h2>
+        <button id="poiClose" class="btn ghost small">✕</button>
+      </div>
+      <div id="poiTags" class="poi-tags"></div>
+      <p id="poiDesc"></p>
+      <div id="poiSpec" class="poi-spec"></div>
+      <div class="poi-actions">
+        <button class="btn" id="poiGoto">前往此处</button>
+      </div>
+    </div>
+
+    <!-- 左下:小地图 + 速度 -->
+    <div id="mapWrap">
+      <canvas id="minimap" width="240" height="240"></canvas>
+      <div id="speedBox" class="panel hidden">
+        <span id="speedVal">0</span><small>km/h</small>
+      </div>
+    </div>
+
+    <!-- 模式提示 -->
+    <div id="modeTip" class="panel hidden"></div>
+
+    <!-- 帮助 -->
+    <div id="helpPanel" class="panel hidden">
+      <h3>操作说明</h3>
+      <table class="help-table">
+        <tr><td>W / A / S / D</td><td>驾驶:油门 / 转向 / 倒车(步行:移动)</td></tr>
+        <tr><td>Space</td><td>手刹漂移(步行:跳)</td></tr>
+        <tr><td>Shift</td><td>加速冲刺</td></tr>
+        <tr><td>1 / 2 / 3</td><td>观察 / 驾驶 / 无人机 模式</td></tr>
+        <tr><td>F</td><td>上下车(驾驶↔步行)</td></tr>
+        <tr><td>Q / E</td><td>无人机:下降 / 上升</td></tr>
+        <tr><td>N</td><td>昼夜自动流转 · 拖顶部滑杆调时间</td></tr>
+        <tr><td>M</td><td>小地图放大</td></tr>
+        <tr><td>L</td><td>地标索引</td></tr>
+        <tr><td>鼠标拖动</td><td>环视 / 无人机转向</td></tr>
+      </table>
+      <p class="help-note">数据口径:坐标为公开地图约测值,地标尺寸为公开资料口径。</p>
+    </div>
+
+    <!-- 状态栏 -->
+    <div id="statusbar">
+      <span id="fpsVal">-- fps</span>
+      <span id="coordVal"></span>
+      <span id="buildStamp"></span>
+    </div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

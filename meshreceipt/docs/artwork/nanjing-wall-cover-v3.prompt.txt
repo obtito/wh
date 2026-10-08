@@ -1,0 +1,13 @@
+Generation mode: built-in image_gen (foreground moat correction)
+Input: public/previews/nanjing-wall-poster-cinematic-v2.png
+Output: public/previews/nanjing-wall-poster-cinematic-v3.png
+Web derivative: public/previews/nanjing-wall-poster-cinematic-v3.webp (WebP quality 85)
+
+Use case: precise-object-edit
+Asset type: landscape 3:2 cinematic Nanjing City Wall website cover.
+Input image: edit target. Preserve the monumental main Nanjing-style city gate, the two smaller supporting gate silhouettes, their visual hierarchy, grey ancient brick materials, imperial grandeur, golden storm lighting and premium cinema poster finish.
+User correction (critical): 城门前应是护城河而不是城墙。The area in FRONT of the main city gate must be a wide water-filled moat, not a raised wall or a walled rampart road.
+Change the foreground layout: Remove the foreground tall crenellated wall/parapet corridor and most of the foreground paved rampart. Replace the lower approximately one third of the image with a broad continuous moat running horizontally in front of the entire city fortification. Show clearly visible open water on BOTH sides of one elegant, relatively narrow stone arch bridge leading across the moat to the principal gate. The bridge has modest low stone railings, never tall defensive walls or crenellations. Show a readable bridge arch and its reflection so the bridge is obviously crossing water rather than being another section of city wall. It should lead diagonally from the lower foreground toward the main gate and provide the eye's compositional path.
+Water: restrained deep green-grey water with fine ripples, warm gold reflections of sky and the main gate, dark masonry reflections, light atmospheric mist close to the far bank. Make the water spacious and legible even in a small card thumbnail. The main gate and its connected defensive walls stand solidly on the far embankment. Keep the distant city walls BEHIND and to the sides of the gate, not obstructing the foreground moat. No waterfalls.
+Keep the hero gate prominent, retain a single realistic arched passage with no repeated nested gates, preserve believable engineering and continuous spatial perspective. Maintain the same landscape aspect ratio and high-detail cinematic texture.
+Constraints: Only revise the foreground approach and necessary shoreline/bridge geometry to satisfy the moat correction; retain the established architecture, composition, mood and palette as much as possible. No text, logos, people, boats, modern features or watermarks. Opaque full bleed.

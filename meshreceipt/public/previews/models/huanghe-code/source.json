@@ -1,0 +1,13 @@
+{
+  "name": "黄鹤楼 · Three.js 代码改进版",
+  "source": "GTA-WH 本地代码改进版快照",
+  "upstreamPath": "assets/models/huanghe-tower-code/tower.js",
+  "snapshotDate": "2026-10-07",
+  "sourceState": "本地未提交版本；不声称已发布到 GitHub",
+  "sha256": "777846d0988e6df1101f55097d09a50d2d2f7100e70d6a5a69b8f0b5b1e8450f",
+  "revision": "photo-refinement-final",
+  "stage": 3,
+  "geometry": "代码生成；保留原生成器，不读取旧 GLB 或照片贴图",
+  "license": "独立代码授权待确认；不沿用旧 China_Tower 模型的 MIT 标注",
+  "limitations": "外观与尺寸含推定，非测绘复原；尚未导出或完成模型质量验收；庭园另为琢信展示设计"
+}

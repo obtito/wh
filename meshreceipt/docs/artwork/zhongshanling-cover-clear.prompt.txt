@@ -1,0 +1,13 @@
+Generation mode: built-in image_gen (lighting/weather edit)
+Input: public/previews/zhongshanling-poster-cinematic.png
+Output: public/previews/zhongshanling-poster-cinematic-clear.png
+Web derivative: public/previews/zhongshanling-poster-cinematic-clear.webp (WebP quality 85)
+
+Use case: lighting-weather
+Asset type: landscape 3:2 premium cinematic Sun Yat-sen Mausoleum website cover.
+Input image: edit target. Preserve the exact established composition, the centered blue-roofed Sun Yat-sen Mausoleum memorial hall, axial stone stairs, terraces, balustrades, surrounding pine forest, and the same recognizable dignified Sun Yat-sen portrait in the same position and scale. Keep architectural geometry and the portrait's identity.
+Primary request: 用户要求“晴空万里”。Transform the weather to a brilliantly clear, beautiful sunny day with an expansive pure azure-blue sky and excellent visibility.
+Change the sky completely: Remove ALL storm clouds, dark cloud masses, sunset glow, dramatic god rays, heavy mountain fog and smoky haze. Use a clean luminous cloudless blue sky, naturally graduating from rich azure high above to very light blue near the distant mountain ridge. It must unmistakably read as a cloudless clear day, not partly stormy or an overcast day.
+Lighting: Clear late-morning sunshine, bright natural daylight, clean pale granite, crisp deep blue glazed roof tiles, rich fresh green forest, finely detailed realistic shadows with open readable midtones. Remove brown/sepia overall grading and twilight darkness. Retain sophisticated cinematic dynamic range, careful color grading and subtle fine film grain: majestic, serene, dignified and uplifting, still a premium historical film poster rather than a flat tourist snapshot.
+Portrait: Keep Sun Yat-sen as a subtle translucent virtual portrait against the blue sky, softly blended with a gentle warm neutral monochrome tint and feathered edges. Let blue sky show through his fading shoulders. Clear recognizable facial features, calm dignified expression, no hard border, not an opaque statue. The portrait must not introduce cloudy or smoky textures back into the sky.
+Constraints: Change weather, illumination, atmospheric treatment and color grading only; preserve layout, main architecture and person identity. No new objects, people, text, titles, slogans, logos or watermark. No clouds, no heavy mist, no sunset. Opaque full bleed.

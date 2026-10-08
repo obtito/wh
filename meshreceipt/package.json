@@ -1,0 +1,39 @@
+{
+  "name": "meshreceipt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:server": "node --env-file-if-exists=.env server/index.js",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test test/*.test.js",
+    "fixtures": "node scripts/create-fixtures.js",
+    "verify": "node src/cli.js",
+    "consume": "node src/consume.js",
+    "agent:smoke": "node --env-file-if-exists=.env scripts/agent-smoke.js",
+    "demo:isolate": "node --env-file-if-exists=.env scripts/demo-isolated.js",
+    "contracts:compile": "node scripts/compile-contract.js",
+    "testnet:prepare": "node scripts/prepare-testnet.js",
+    "testnet:verify": "node scripts/verify-testnet-deployment.js"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "^4.2.1",
+    "@google/model-viewer": "^4.1.0",
+    "ethers": "^6.15.0",
+    "gltf-validator": "^2.0.0-dev.3.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.3",
+    "three": "0.183.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "ganache": "^7.9.2",
+    "solc": "^0.8.30",
+    "vite": "^7.1.7"
+  }
+}

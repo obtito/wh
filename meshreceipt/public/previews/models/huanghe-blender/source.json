@@ -1,0 +1,23 @@
+{
+  "name": "黄鹤楼 · Blender 实景优化版",
+  "source": "GTA-WH 本地 Blender 实景优化交付快照",
+  "snapshotDate": "2026-10-07",
+  "modelCompletedAt": "2026-10-07T18:08:33+08:00",
+  "upstreamPath": "yellow-crane-tower-refined-20261007/assets/refined.glb",
+  "blendPath": "yellow-crane-tower-refined-20261007/黄鹤楼_实景优化.blend",
+  "modelUrl": "/previews/models/huanghe-blender/refined.glb",
+  "bytes": 25563692,
+  "sha256": "ec6d409eed5beb55b0ef2d14b21253e1c6140cff7e4bca33f7e229433bff9342",
+  "blendSha256": "ee68da15e0b0381bcb107c91325530a9c39f62ecb1a60b519d8f3a2f5c84c4b4",
+  "generator": "Khronos glTF Blender I/O v4.5.51",
+  "stage": "final",
+  "meshCount": 358,
+  "nativeTotalHeight": 53.46979904174805,
+  "authoredHeightAboveTerrace": 51.4,
+  "sourceState": "本地交付快照，不声称已提交或发布到 GitHub",
+  "license": "独立 Blender 模型及字体授权待确认；不能沿用旧 China_Tower GLB 的 MIT 标注。参考照片未拷贝到本项目。",
+  "changes": ["首层、中层、顶层比例修订", "连续曲檐与嵌入式抱厦", "棕红回纹木栏、低石台和局部台阶", "橙赭琉璃瓦、青绿彩绘、铜色宝顶", "保留导出为网格的中文匾额及字序"],
+  "previewAdaptation": "保留原米制尺度及材质，仅绕 Y 轴旋转 180 度以与检视页正面方向对齐，并平移落地居中。保留独立展示台，添加展示园景。不加入旧 GLB 的材质覆盖或叠加补件。",
+  "validation": {"kind": "glTF 格式与资源完整性检查", "errors": 0, "warnings": 0, "note": "格式检查不等于外观准确性、版权确认或琢信质量验收"},
+  "limitations": ["照片参照的程序化近似重建，非测绘复原", "背面、深度及部分雕饰含推断或简化", "斗拱、回纹和瓦件并非逐件复刻", "未完成琢信质量验收；未发行数字资产"]
+}
