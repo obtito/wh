@@ -23,11 +23,16 @@ export async function verifySnapshot(manifest, readBytes) {
   const computed = await hashBytes(new TextEncoder().encode(JSON.stringify(manifest.files)));
   if (computed !== manifest.baseVersion) throw new Error('底图版本与文件清单不一致');
   const loaded = new Map();
-  await Promise.all(names.map(async name => {
+  let cursor = 0;
+  async function worker() {
+    while (cursor < names.length) {
+    const name = names[cursor++];
     const bytes = await readBytes(name);
     if (!(bytes instanceof Uint8Array) || bytes.length !== manifest.files[name].bytes
       || await hashBytes(bytes) !== manifest.files[name].sha256) throw new Error(`底图文件指纹不一致：${name}`);
     loaded.set(name, bytes);
-  }));
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(4, names.length) }, worker));
   return loaded;
 }

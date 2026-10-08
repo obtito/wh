@@ -1,20 +1,24 @@
 import { createPoints, filterPoints, layoutLabels, pointRequest, validateRoads } from './plan.js';
 import { verifySnapshot } from './snapshot-check.js';
+import { loadCityResource } from './resource-loader.js';
 
 const $ = id => document.getElementById(id);
 const startedAt = performance.now();
 const lifetime = new AbortController();
 let disposed = false, contextLost = false, frame = 0, animation = null;
 async function fetchBytes(url) {
-  const response = await fetch(url, { cache: 'no-cache', signal: AbortSignal.any([lifetime.signal, AbortSignal.timeout(20_000)]) });
-  if (!response.ok) throw new Error(`底图读取失败 (${response.status})：${url}`);
-  const bytes = new Uint8Array(await response.arrayBuffer());
-  if (bytes.length > 10 * 1024 * 1024) throw new Error('底图文件超过支持范围');
-  return bytes;
+  return loadCityResource(url, { signal: lifetime.signal, onRetry: ({ attempt }) => {
+    $('loading').textContent = `网络较慢，正在自动重试底图资源（${attempt}/2）…`;
+  } });
 }
 const decode = bytes => new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 const manifest = JSON.parse(decode(await fetchBytes('./snapshot/snapshot.json')));
-const files = await verifySnapshot(manifest, name => fetchBytes(`./snapshot/${name}`));
+let loadedFiles = 0;
+const files = await verifySnapshot(manifest, async name => {
+  const bytes = await fetchBytes(`./snapshot/${name}`);
+  $('loading').textContent = `正在加载 GTA-WH 底图（${++loadedFiles}/${Object.keys(manifest.files).length}）…`;
+  return bytes;
+});
 const [THREE, { OrbitControls }, world, lib, geo, data, layout] = await Promise.all([
   import('three'), import('three/addons/OrbitControls.js'), import('./snapshot/js/world.js'),
   import('./snapshot/js/lib.js'), import('./snapshot/js/geo.js'), import('./snapshot/js/data.js'), import('./snapshot/js/road-layout.js'),

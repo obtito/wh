@@ -32,3 +32,5 @@ npm run build
 公开网页：https://meshreceipt-wh.youngbeech1.chatgpt.site
 
 `deployment/hosting.json` 保存公开网站身份；托管用的静态源快照位于独立发布目录，应用源码不依赖托管平台。
+
+首页与城市地图已合并：主导航在首页展开地图，旧 `/city/` 地址回到 `/#city-building`。地图仅在展开时加载，收起后保留状态。底图文件并发上限 4、优先浏览器缓存，临时超时自动重试 2 次并显示加载进度。

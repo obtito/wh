@@ -2,6 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    if (window.parent === window && !new URLSearchParams(location.search).has('embedded')) location.replace('/#city-building');
+    if (new URLSearchParams(location.search).has('embedded')) document.documentElement.classList.add('embedded-city');
+  </script>
   <title>江城共琢 · 琢信城市共建</title>
   <meta name="description" content="城市参考底图与待建点位。地图展示不代表测绘级精度；社区提交和链上登记尚未开放。">
   <script type="importmap">{"imports":{"three":"./snapshot/vendor/three.module.js","three/addons/":"./snapshot/vendor/"}}</script>
@@ -51,7 +55,7 @@
     import('./main.js').catch(error => {
       document.getElementById('loading').hidden = true;
       const notice = document.getElementById('error'); notice.hidden = false;
-      notice.textContent = `地图未能加载：${error.message}。请检查底图快照和浏览器 WebGL 支持。`;
+      notice.textContent = `地图未能加载：${error.message}。请检查网络连接，并点击重新读取地图。`;
       document.getElementById('viewport').setAttribute('aria-busy', 'false');
       const retry = document.getElementById('retry'); retry.hidden = false; retry.onclick = () => location.reload();
     });
