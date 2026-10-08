@@ -50,6 +50,29 @@ for (const [label, source] of [['nanjing', 'GTA-NJ'], ['wuhan', 'GTA-WH']]) {
 const gatePage = path.join(output, 'api/source/nanjing/preview-gates.html');
 await writeFile(gatePage, (await readFile(gatePage, 'utf8')).replace('<a href="./index.html?lm=none">↗ 返回城市总览</a><br>', '琢信 · 城门检视<br>'));
 await writeFile(path.join(output, '.nojekyll'), '');
+// Keep each hosting object below 8 MiB. Reassemble the exact GLB before parsing,
+// so the source geometry/materials and Meshopt data stay unchanged.
+const largeModels = {};
+async function splitModels(directory) {
+  for (const item of await readdir(directory, { withFileTypes: true })) {
+    const file = path.join(directory, item.name);
+    if (item.isDirectory()) { await splitModels(file); continue; }
+    if (!item.name.endsWith('.glb') || (await stat(file)).size <= 8 * 1024 * 1024) continue;
+    const bytes = await readFile(file), parts = [];
+    for (let offset = 0; offset < bytes.length; offset += 8 * 1024 * 1024) {
+      const part = `${file}.part-${parts.length}.bin`;
+      await writeFile(part, bytes.subarray(offset, offset + 8 * 1024 * 1024));
+      parts.push('/' + path.relative(output, part));
+    }
+    largeModels['/' + path.relative(output, file)] = { bytes: bytes.length, parts };
+    await rm(file);
+  }
+}
+await splitModels(output);
+const publicLoader = path.join(output, 'previews/wuhan.js');
+let loaderCode = await readFile(publicLoader, 'utf8');
+loaderCode = `const publicModelParts = ${JSON.stringify(largeModels)};\nasync function loadPublicModel(loader, url) {\n  const entry = publicModelParts[url];\n  if (!entry) return loader.loadAsync(url);\n  const chunks = await Promise.all(entry.parts.map(async part => {\n    const response = await fetch(part); if (!response.ok) throw new Error('模型分片加载失败'); return new Uint8Array(await response.arrayBuffer());\n  }));\n  const bytes = new Uint8Array(entry.bytes); let offset = 0;\n  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }\n  if (offset !== entry.bytes) throw new Error('模型分片长度不匹配');\n  return loader.parseAsync(bytes.buffer, url.slice(0, url.lastIndexOf('/') + 1));\n}\n` + loaderCode.replace('loader => loader.loadAsync(url)', 'loader => loadPublicModel(loader, url)');
+await writeFile(publicLoader, loaderCode);
 await json('publication.json', { generatedAt: new Date().toISOString(), mode: 'public-exhibition',
   assets: landmarks.length + assets.length, source: 'https://github.com/obtito/wh',
   taskBackend: false, mainnetStatus: 'archive-only' });
@@ -79,4 +102,4 @@ for (const item of landmarks) for (const url of [item.previewUrl, item.poster]) 
   if (url) await stat(path.join(output, url.split('?')[0]));
 }
 console.log(JSON.stringify({ status: 'built', assets: landmarks.length + assets.length, checkedDependencies: checked,
-  localReceiptVerification: evidence.localVerification.qualified, output }));
+  splitModels: Object.keys(largeModels).length, localReceiptVerification: evidence.localVerification.qualified, output }));
